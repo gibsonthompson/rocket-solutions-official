@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Automation | Rocket Solutions</title>
+<meta name="description" content="Content and marketing that research, write, and publish themselves on a schedule, without a hand on the keyboard." />
+<meta name="theme-color" content="#FBF7F1" />
+<script>document.documentElement.classList.add('js')</script>
+<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .svc-hero { position: relative; overflow: hidden; padding: clamp(36px,5vw,72px) 0 clamp(56px,7vw,96px); }
+  .svc-hero .orb { position: absolute; border-radius: 50%; background: var(--grad-dawn); filter: blur(20px); pointer-events: none; }
+  .svc-hero .orb.a { width: 520px; height: 520px; right: -150px; top: -120px; opacity: .5; }
+  .svc-hero .orb.b { width: 300px; height: 300px; left: -160px; bottom: -40px; opacity: .32; }
+  .svc-hero .wrap { position: relative; z-index: 1; }
+  .svc-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(30px,5vw,68px); align-items: center; }
+  .svc-hero .eyebrow { margin-bottom: 26px; }
+  .svc-hero h1 { font-family: var(--display); font-weight: 600; font-size: clamp(40px,5.6vw,76px); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 24px; }
+  .svc-hero .lead { max-width: 32em; margin-bottom: 34px; }
+  .svc-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+  .stage { position: relative; height: clamp(340px,38vw,440px); }
+  .stage-orb { position: absolute; inset: 8% 8% 8% 8%; border-radius: 46% 54% 52% 48% / 55% 48% 52% 45%; background: var(--grad-dawn); box-shadow: 0 40px 100px -40px rgba(240,67,42,.5); }
+  .stage-orb.inner { inset: 22% 20% 22% 20%; background: var(--grad-burn); opacity: .9; border-radius: 52% 48% 46% 54% / 48% 55% 45% 52%; }
+  .float-card { animation: bob 6s ease-in-out infinite; }
+  .float-card:nth-of-type(3) { animation-delay: -2s; } .float-card:nth-of-type(4) { animation-delay: -4s; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  .fc-a { top: 4%; left: -4%; } .fc-b { top: 44%; right: -6%; } .fc-c { bottom: 4%; left: 12%; }
+
+  .stakes { padding: clamp(20px,3vw,32px) 0; }
+  .stakes-panel { position: relative; overflow: hidden; background: var(--grad-soft); border: 1px solid var(--line-2); border-radius: var(--r-lg); padding: clamp(36px,5vw,68px); }
+  .stakes-panel .sp-orb { position: absolute; right: -80px; bottom: -100px; width: 300px; height: 300px; border-radius: 50%; background: var(--grad-dawn); opacity: .5; filter: blur(14px); }
+  .stakes-panel .inner { position: relative; max-width: 30em; }
+  .stakes-panel .k { font-size: 14px; font-weight: 600; color: var(--red); letter-spacing: 0.02em; margin-bottom: 16px; }
+  .stakes-panel p { font-family: var(--display); font-weight: 500; font-size: clamp(24px,3.2vw,40px); line-height: 1.14; letter-spacing: -0.02em; }
+  .stakes-panel p .accent { color: var(--red); }
+
+  @media (max-width: 1000px) {
+    .svc-grid { grid-template-columns: 1fr; gap: 40px; }
+    .stage { max-width: 440px; }
+  }
+  @media (max-width: 760px) { .fc-a { left: 0; } .fc-b { right: 0; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="burn" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#F9743B"/><stop offset="55%" stop-color="#F0432A"/><stop offset="100%" stop-color="#C31C36"/></linearGradient>
+  <symbol id="rs-monogram" viewBox="0 0 40 40">
+    <rect width="40" height="40" rx="11" fill="url(#burn)"/>
+    <path d="M20 8.5 C24.5 12.5 26 18 26 22.4 L22.4 25.8 H17.6 L14 22.4 C14 18 15.5 12.5 20 8.5 Z" fill="#fff"/>
+    <circle cx="20" cy="18" r="2.5" fill="#F0432A"/>
+    <path d="M17.6 25.8 L15.4 31.5 L19.2 28.8 Z M22.4 25.8 L24.6 31.5 L20.8 28.8 Z" fill="#fff" opacity=".92"/>
+  </symbol>
+</defs></svg><header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="Rocket Solutions home">
+      <svg class="monogram"><use href="#rs-monogram"/></svg>
+      <span class="word">Rocket Solutions</span>
+    </a>
+    <nav class="nav-menu" id="navMenu"><a class="item" href="index.html">Home</a><a class="item" href="voice-ai.html">Voice AI</a><a class="item" href="websites.html">Websites</a><a class="item" href="software.html">Software</a><a class="item active" href="automation.html">Automation</a><a class="item" href="contact.html">Contact</a></nav>
+    <div class="nav-right">
+      <a class="btn btn-primary desk" href="contact.html">Start a project <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="svc-hero">
+    <div class="orb a"></div><div class="orb b"></div>
+    <div class="wrap">
+      <div class="svc-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> AI Automation</span>
+          <h1>Marketing that<br>runs while<br>you work.</h1>
+          <p class="lead">Staying visible online is a full time job you do not have time for. We build automated systems that research, write, and publish your content and social on a schedule, so your marketing keeps running while you run the business.</p>
+          <div class="svc-actions">
+            <a class="btn btn-primary" href="contact.html">Start a project <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <a class="btn btn-ghost" href="#how">How it works</a>
+          </div>
+        </div>
+        <div class="stage" aria-hidden="true">
+          <div class="stage-orb"></div><div class="stage-orb inner"></div>
+          <div class="float-card fc-a">
+      <div class="fc-ic" style="background:var(--blush)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg></div>
+      <div><div class="fc-k">New article</div><div class="fc-v">Published</div></div>
+    </div>
+      <div class="float-card fc-b">
+      <div class="fc-ic" style="background:var(--blush)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg></div>
+      <div><div class="fc-k">Social post</div><div class="fc-v">Scheduled</div></div>
+    </div>
+      <div class="float-card fc-c">
+      <div class="fc-ic" style="background:var(--blush)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
+      <div><div class="fc-k">Pipeline</div><div class="fc-v">Running</div></div>
+    </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stakes">
+    <div class="wrap">
+      <div class="stakes-panel reveal">
+        <div class="sp-orb"></div>
+        <div class="inner">
+          <div class="k">The cost of going quiet</div>
+          <p>When your marketing stops, so does your pipeline. Staying consistent by hand is <span class="accent">the thing every busy owner drops first.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow"><span class="dot"></span> What you get</span>
+        <h2 class="h2">Consistent output, zero overhead.</h2></div>
+      <div class="outcomes" style="margin-top:clamp(40px,5vw,64px)">
+        <div class="outcome-card reveal">
+          <div class="oc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
+          <h4>Always publishing</h4><p>Fresh content and posts go out on schedule, without you lifting a finger.</p>
+        </div>
+        <div class="outcome-card reveal d1">
+          <div class="oc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h4>No new hires</h4><p>The work of a content team, handled by a system that runs itself.</p>
+        </div>
+        <div class="outcome-card reveal d2">
+          <div class="oc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M21 7v5M21 7h-5"/></svg></div>
+          <h4>Compounding reach</h4><p>Steady, search ready content that builds your visibility month after month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow"><span class="dot"></span> What is included</span>
+        <h2 class="h2">Everything, handled for you.</h2></div>
+      <div class="included" style="margin-top:clamp(36px,4vw,52px)">
+        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h5>Content pipelines</h5><p>Systems that research, write, and format articles end to end.</p></div></div>
+        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h5>Automated publishing</h5><p>New content goes live on your site on a set schedule, hands free.</p></div></div>
+        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h5>Social posting</h5><p>Posts created and scheduled across your channels automatically.</p></div></div>
+        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h5>Performance tracking</h5><p>The system watches what performs and leans into what works.</p></div></div>
+        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h5>Lead workflows</h5><p>Follow ups and nurture sequences that run on their own.</p></div></div>
+        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h5>Brand consistency</h5><p>Everything sounds like you, every time, with no drift.</p></div></div>
+        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h5>Quality control</h5><p>Automated checks keep the output accurate and on brand before it ships.</p></div></div>
+        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+          <div><h5>Reporting</h5><p>Clear visibility into what is going out and how it is doing.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow"><span class="dot"></span> How it works</span>
+        <h2 class="h2">Live in weeks, not months.</h2></div>
+      <div class="stepline" style="margin-top:clamp(40px,5vw,64px)">
+        <div class="stepc reveal"><div class="sn">01</div>
+          <h4>We learn your voice</h4><p>We capture how your brand sounds and what your customers care about.</p></div>
+        <div class="stepc reveal d1"><div class="sn">02</div>
+          <h4>We build the system</h4><p>We set up the pipelines that research, write, and publish for you.</p></div>
+        <div class="stepc reveal d2"><div class="sn">03</div>
+          <h4>It runs on its own</h4><p>Content ships on schedule while we monitor and tune what performs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <div class="cta-orb orb-a"></div><div class="cta-orb orb-b"></div>
+        <h2 class="h2">Put your marketing<br>on autopilot.</h2>
+        <p>Tell us where you want to show up. We will show you the system we would build to keep you visible without the manual work.</p>
+        <div class="cta-actions">
+          <a class="btn btn-white" href="contact.html">Start a project <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)" href="index.html">Back to home</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><svg class="monogram"><use href="#rs-monogram"/></svg><span class="word">Rocket Solutions</span></a>
+        <p>A technology firm that builds the systems businesses run on. Georgia based, delivering nationwide.</p>
+      </div>
+      <div class="foot-col"><div class="h">Capabilities</div>
+        <a href="voice-ai.html">Voice AI</a><a href="websites.html">Websites</a><a href="software.html">Custom Software</a><a href="automation.html">AI Automation</a></div>
+      <div class="foot-col"><div class="h">Firm</div>
+        <a href="index.html">Home</a><a href="contact.html">Contact</a><a href="mailto:hello@gorocketsolutions.com">Email us</a></div>
+      <div class="foot-col"><div class="h">Get started</div>
+        <a href="contact.html">Start a project</a><a href="contact.html">Book a call</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Rocket Solutions LLC. All rights reserved.</span>
+      <span>Georgia, United States</span>
+    </div>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
