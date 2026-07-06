@@ -4,55 +4,36 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Websites | Rocket Solutions</title>
-<meta name="description" content="Fast, search ready websites engineered to get found and turn visitors into booked work." />
-<meta name="theme-color" content="#FBF7F1" />
+<meta name="description" content="Websites engineered to be found in search and built to turn visitors into booked work." />
+<meta name="theme-color" content="#F3F1EB" />
 <script>document.documentElement.classList.add('js')</script>
 <link rel="icon" type="image/png" href="/logo.png" />
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 <style>
-  .svc-hero { position: relative; overflow: hidden; padding: clamp(36px,5vw,72px) 0 clamp(56px,7vw,96px); }
-  .svc-hero .orb { position: absolute; border-radius: 50%; background: var(--grad-dawn); filter: blur(20px); pointer-events: none; }
-  .svc-hero .orb.a { width: 520px; height: 520px; right: -150px; top: -120px; opacity: .5; }
-  .svc-hero .orb.b { width: 300px; height: 300px; left: -160px; bottom: -40px; opacity: .32; }
-  .svc-hero .wrap { position: relative; z-index: 1; }
-  .svc-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(30px,5vw,68px); align-items: center; }
-  .svc-hero .eyebrow { margin-bottom: 26px; }
-  .svc-hero h1 { font-family: var(--display); font-weight: 600; font-size: clamp(40px,5.6vw,76px); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 24px; }
-  .svc-hero .lead { max-width: 32em; margin-bottom: 34px; }
-  .svc-actions { display: flex; gap: 15px; flex-wrap: wrap; }
-  .stage { position: relative; height: clamp(340px,38vw,440px); }
-  .stage-orb { position: absolute; inset: 8% 8% 8% 8%; border-radius: 46% 54% 52% 48% / 55% 48% 52% 45%; background: var(--grad-dawn); box-shadow: 0 40px 100px -40px rgba(240,67,42,.5); }
-  .stage-orb.inner { inset: 22% 20% 22% 20%; background: var(--grad-burn); opacity: .9; border-radius: 52% 48% 46% 54% / 48% 55% 45% 52%; }
-  .float-card { animation: bob 6s ease-in-out infinite; }
-  .float-card:nth-of-type(3) { animation-delay: -2s; } .float-card:nth-of-type(4) { animation-delay: -4s; }
-  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-  .fc-a { top: 4%; left: -4%; } .fc-b { top: 44%; right: -6%; } .fc-c { bottom: 4%; left: 12%; }
-
-  .stakes { padding: clamp(20px,3vw,32px) 0; }
-  .stakes-panel { position: relative; overflow: hidden; background: var(--grad-soft); border: 1px solid var(--line-2); border-radius: var(--r-lg); padding: clamp(36px,5vw,68px); }
-  .stakes-panel .sp-orb { position: absolute; right: -80px; bottom: -100px; width: 300px; height: 300px; border-radius: 50%; background: var(--grad-dawn); opacity: .5; filter: blur(14px); }
-  .stakes-panel .inner { position: relative; max-width: 30em; }
-  .stakes-panel .k { font-size: 14px; font-weight: 600; color: var(--red); letter-spacing: 0.02em; margin-bottom: 16px; }
-  .stakes-panel p { font-family: var(--display); font-weight: 500; font-size: clamp(24px,3.2vw,40px); line-height: 1.14; letter-spacing: -0.02em; }
-  .stakes-panel p .accent { color: var(--red); }
-
-  @media (max-width: 1000px) {
-    .svc-grid { grid-template-columns: 1fr; gap: 40px; }
-    .stage { max-width: 440px; }
-  }
-  @media (max-width: 760px) { .fc-a { left: 0; } .fc-b { right: 0; } }
+  .svc-hero { padding: clamp(48px,6vw,84px) 0 0; }
+  .svc-hero .label { display:block; margin-bottom: clamp(24px,3vw,36px); }
+  .svc-hero h1 { max-width: 15em; margin-bottom: clamp(24px,3vw,36px); }
+  .svc-hero .lead { max-width: 40em; padding-bottom: clamp(36px,4vw,52px); }
+  .contact-grid { display:grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(32px,5vw,72px); align-items:start; }
+  .cmeta { border-top:1px solid var(--line-strong); }
+  .cmeta .row { display:flex; flex-direction:column; gap:5px; padding:18px 0; border-bottom:1px solid var(--line); }
+  .cmeta .row .k { font-family:var(--display); font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-3); }
+  .cmeta .row .v { font-size:16px; }
+  .cmeta .row a.v:hover { color:var(--red); }
+  form.rs-form { border:1px solid var(--line-strong); border-radius:var(--radius); padding: clamp(24px,3vw,40px); background:var(--panel); }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-  <linearGradient id="burn" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#F9743B"/><stop offset="55%" stop-color="#F0432A"/><stop offset="100%" stop-color="#C31C36"/></linearGradient>
   <symbol id="rs-monogram" viewBox="0 0 40 40">
-    <rect width="40" height="40" rx="11" fill="url(#burn)"/>
-    <path d="M20 8.5 C24.5 12.5 26 18 26 22.4 L22.4 25.8 H17.6 L14 22.4 C14 18 15.5 12.5 20 8.5 Z" fill="#fff"/>
-    <circle cx="20" cy="18" r="2.5" fill="#F0432A"/>
-    <path d="M17.6 25.8 L15.4 31.5 L19.2 28.8 Z M22.4 25.8 L24.6 31.5 L20.8 28.8 Z" fill="#fff" opacity=".92"/>
+    <rect width="40" height="40" rx="2" fill="#17140F"/>
+    <path d="M20 9 C24 12.6 25.4 17.4 25.4 21.4 L22.2 24.4 H17.8 L14.6 21.4 C14.6 17.4 16 12.6 20 9 Z" fill="#C4241C"/>
+    <circle cx="20" cy="18" r="2.3" fill="#17140F"/>
+    <path d="M17.8 24.4 L15.9 29.6 L19.3 27.2 Z M22.2 24.4 L24.1 29.6 L20.7 27.2 Z" fill="#C4241C"/>
   </symbol>
 </defs></svg><header class="nav" id="nav">
   <div class="wrap nav-inner">
@@ -60,131 +41,77 @@
       <svg class="monogram"><use href="#rs-monogram"/></svg>
       <span class="word">Rocket Solutions</span>
     </a>
-    <nav class="nav-menu" id="navMenu"><a class="item" href="index.html">Home</a><a class="item" href="voice-ai.html">Voice AI</a><a class="item active" href="websites.html">Websites</a><a class="item" href="software.html">Software</a><a class="item" href="automation.html">Automation</a><a class="item" href="contact.html">Contact</a></nav>
+    <nav class="nav-menu" id="navMenu"><a class="item" href="index.html">Index</a><a class="item" href="voice-ai.html">Voice AI</a><a class="item active" href="websites.html">Websites</a><a class="item" href="software.html">Software</a><a class="item" href="automation.html">Automation</a><a class="item" href="contact.html">Contact</a></nav>
     <div class="nav-right">
-      <a class="btn btn-primary desk" href="contact.html">Start a project <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="nav-cta" href="contact.html">Get In Touch</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
       </button>
     </div>
   </div>
 </header>
 <main>
   <section class="svc-hero">
-    <div class="orb a"></div><div class="orb b"></div>
     <div class="wrap">
-      <div class="svc-grid">
-        <div>
-          <span class="eyebrow"><span class="dot"></span> Websites</span>
-          <h1>Get found.<br>Get booked.<br>Get paid.</h1>
-          <p class="lead">A website should do more than look good. Yours is engineered to rank in search, load in an instant, and turn the people who find you into booked jobs and paying customers.</p>
-          <div class="svc-actions">
-            <a class="btn btn-primary" href="contact.html">Start a project <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-            <a class="btn btn-ghost" href="#how">How it works</a>
-          </div>
-        </div>
-        <div class="stage" aria-hidden="true">
-          <div class="stage-orb"></div><div class="stage-orb inner"></div>
-          <div class="float-card fc-a">
-      <div class="fc-ic" style="background:var(--blush)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-      <div><div class="fc-k">Search ranking</div><div class="fc-v">Page 1</div></div>
+      <span class="label"><span class="n">02</span> Websites</span>
+      <h1 class="h1">Websites Built To Be Found And To Convert.</h1>
+      <p class="lead">We build fast, search ready websites that rank for what customers actually search, load in an instant, and turn the people who arrive into booked jobs.</p>
     </div>
-      <div class="float-card fc-b">
-      <div class="fc-ic" style="background:var(--blush)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13l4-4"/><path d="M3 17a9 9 0 1 1 18 0"/></svg></div>
-      <div><div class="fc-k">Load time</div><div class="fc-v">0.9s</div></div>
-    </div>
-      <div class="float-card fc-c">
-      <div class="fc-ic" style="background:var(--blush)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M9 15l2 2 4-4"/></svg></div>
-      <div><div class="fc-k">Booking</div><div class="fc-v">Confirmed</div></div>
-    </div>
-        </div>
-      </div>
-    </div>
+    <div class="wrap"><div class="masthead">
+      <div class="m-cell"><b>What It Is</b> Website</div>
+      <div class="m-cell"><b>Built For</b> Search & Booking</div>
+      <div class="m-cell"><b>Load</b> Under 1s</div>
+    </div></div>
   </section>
 
-  <section class="stakes">
+  <section class="section">
     <div class="wrap">
-      <div class="stakes-panel reveal">
-        <div class="sp-orb"></div>
-        <div class="inner">
-          <div class="k">The cost of a slow, invisible site</div>
-          <p>If customers cannot find you or your site makes them wait, they leave and <span class="accent">book with someone who shows up first.</span></p>
-        </div>
+      <div class="sec-head reveal"><span class="label"><span class="n">A</span> What It Does</span>
+        <h2 class="h2">Found In Search. Built To Book.</h2></div>
+      <div class="cols">
+        <div class="col reveal"><div class="c-n">A / Reach</div><h4>Found By The Right People</h4><p>Built around the searches customers type, so the business shows up when it counts.</p></div>
+        <div class="col reveal"><div class="c-n">B / Speed</div><h4>Fast Enough To Keep Them</h4><p>Pages that load in under a second, because every slow second sends people away.</p></div>
+        <div class="col reveal"><div class="c-n">C / Conversion</div><h4>Visitors Become Bookings</h4><p>Clear paths to call, book, and buy, so traffic turns into work on the calendar.</p></div>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow"><span class="dot"></span> What you get</span>
-        <h2 class="h2">A site that earns its place in your pipeline.</h2></div>
-      <div class="outcomes" style="margin-top:clamp(40px,5vw,64px)">
-        <div class="outcome-card reveal">
-          <div class="oc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-          <h4>Found by the right people</h4><p>Built around the searches your customers actually type, so you show up when it counts.</p>
-        </div>
-        <div class="outcome-card reveal d1">
-          <div class="oc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
-          <h4>Fast enough to keep them</h4><p>Pages that load in under a second, because every slow second sends people away.</p>
-        </div>
-        <div class="outcome-card reveal d2">
-          <div class="oc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M9 15l2 2 4-4"/></svg></div>
-          <h4>Visitors become bookings</h4><p>Clear paths to call, book, and buy, so traffic turns into real work on the calendar.</p>
-        </div>
+      <div class="sec-head reveal"><span class="label"><span class="n">B</span> What Is Included</span>
+        <h2 class="h2">Everything In The Build.</h2></div>
+      <div class="spec">
+        <div class="spec-item"><span class="s-n">01</span><h5>Custom Design</h5><p>A site designed for the brand, not a template everyone else uses.</p></div>
+        <div class="spec-item"><span class="s-n">02</span><h5>SEO Architecture</h5><p>Clean structure and content built to rank in local and organic search.</p></div>
+        <div class="spec-item"><span class="s-n">03</span><h5>Service & Location Pages</h5><p>Dedicated pages that capture searches across every service and area.</p></div>
+        <div class="spec-item"><span class="s-n">04</span><h5>Booking & Lead Flows</h5><p>Simple, obvious paths that turn a visitor into a booked customer.</p></div>
+        <div class="spec-item"><span class="s-n">05</span><h5>Mobile First</h5><p>Flawless on the phone, where most customers actually are.</p></div>
+        <div class="spec-item"><span class="s-n">06</span><h5>Analytics</h5><p>Clear reporting on what brings in leads.</p></div>
+        <div class="spec-item"><span class="s-n">07</span><h5>Structured Data</h5><p>Schema that helps search engines and AI surface the business.</p></div>
+        <div class="spec-item"><span class="s-n">08</span><h5>Ongoing Updates</h5><p>Kept fast, current, and converting long after launch.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
+  <section class="section">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow"><span class="dot"></span> What is included</span>
-        <h2 class="h2">Everything, handled for you.</h2></div>
-      <div class="included" style="margin-top:clamp(36px,4vw,52px)">
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Custom design</h5><p>A site designed for your brand, not a template everyone else is using.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>SEO architecture</h5><p>Clean structure and content built to rank in local and organic search.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Service and location pages</h5><p>Dedicated pages that capture searches across every service and area you cover.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Booking and lead flows</h5><p>Simple, obvious paths that turn a visitor into a booked customer.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Mobile first</h5><p>Flawless on the phone, where most of your customers actually are.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Analytics</h5><p>Clear reporting on what brings in leads, so you know what is working.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Structured data</h5><p>Schema that helps search engines and AI understand and surface your business.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Ongoing updates</h5><p>We keep it fast, current, and converting long after launch.</p></div></div>
+      <div class="sec-head reveal"><span class="label"><span class="n">C</span> Method</span>
+        <h2 class="h2">How It Gets Built.</h2></div>
+      <div class="process">
+        <div class="process-row reveal"><span class="p-n">01</span><h4>Learn The Market</h4><p>The customers, the services, and the competition are studied first.</p></div>
+        <div class="process-row reveal"><span class="p-n">02</span><h4>Design And Build</h4><p>A fast, search ready site is built to convert, shared as it comes together.</p></div>
+        <div class="process-row reveal"><span class="p-n">03</span><h4>Launch And Grow</h4><p>It goes live, starts ranking, and keeps improving what brings in work.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="how" style="padding-top:0">
+  <section class="section band-dark">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow"><span class="dot"></span> How it works</span>
-        <h2 class="h2">Live in weeks, not months.</h2></div>
-      <div class="stepline" style="margin-top:clamp(40px,5vw,64px)">
-        <div class="stepc reveal"><div class="sn">01</div>
-          <h4>We learn your market</h4><p>We study your customers, your services, and who you are competing against.</p></div>
-        <div class="stepc reveal d1"><div class="sn">02</div>
-          <h4>We design and build</h4><p>A fast, search ready site built to convert, shared with you as it comes together.</p></div>
-        <div class="stepc reveal d2"><div class="sn">03</div>
-          <h4>We launch and grow it</h4><p>It goes live, starts ranking, and we keep improving what brings in work.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section tight">
-    <div class="wrap">
-      <div class="cta-band reveal">
-        <div class="cta-orb orb-a"></div><div class="cta-orb orb-b"></div>
-        <h2 class="h2">Turn your website into<br>your best salesperson.</h2>
-        <p>Send us your current site or your idea for one. We will show you what we would build and how it would bring in more booked work.</p>
-        <div class="cta-actions">
-          <a class="btn btn-white" href="contact.html">Start a project <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a class="btn" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)" href="index.html">Back to home</a>
-        </div>
+      <div class="reveal" style="max-width:22em">
+        <span class="label"><span class="n" style="color:var(--red)">*</span> Contact</span>
+        <h2 class="h2" style="margin:20px 0 20px">Tell Us What You Are Working On.</h2>
+        <p class="lead" style="margin-bottom:32px">Send a few details about the business and what needs building. You will hear back within one business day.</p>
+        <a class="btn btn-invert" href="contact.html">Get In Touch <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </section>
@@ -194,17 +121,17 @@
     <div class="foot-top">
       <div class="foot-brand">
         <a class="brand" href="index.html"><svg class="monogram"><use href="#rs-monogram"/></svg><span class="word">Rocket Solutions</span></a>
-        <p>A technology firm that builds the systems businesses run on. Georgia based, delivering nationwide.</p>
+        <p>A technology firm building the voice systems, websites, software, and automation that businesses run on.</p>
       </div>
-      <div class="foot-col"><div class="h">Capabilities</div>
+      <div class="foot-col"><div class="h">The Work</div>
         <a href="voice-ai.html">Voice AI</a><a href="websites.html">Websites</a><a href="software.html">Custom Software</a><a href="automation.html">AI Automation</a></div>
       <div class="foot-col"><div class="h">Firm</div>
-        <a href="index.html">Home</a><a href="contact.html">Contact</a><a href="mailto:hello@gorocketsolutions.com">Email us</a></div>
-      <div class="foot-col"><div class="h">Get started</div>
-        <a href="contact.html">Start a project</a><a href="contact.html">Book a call</a></div>
+        <a href="index.html">Index</a><a href="contact.html">Contact</a><a href="mailto:hello@gorocketsolutions.com">Email</a></div>
+      <div class="foot-col"><div class="h">Office</div>
+        <a href="#">Georgia, USA</a><a href="mailto:hello@gorocketsolutions.com">hello@gorocketsolutions.com</a></div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Rocket Solutions LLC. All rights reserved.</span>
+      <span>&copy; 2026 Rocket Solutions LLC</span>
       <span>Georgia, United States</span>
     </div>
   </div>

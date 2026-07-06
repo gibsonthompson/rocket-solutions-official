@@ -4,55 +4,36 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Custom Software | Rocket Solutions</title>
-<meta name="description" content="Admin dashboards, CRMs, and internal tools built around how your business actually runs." />
-<meta name="theme-color" content="#FBF7F1" />
+<meta name="description" content="Dashboards, CRMs, and internal tools that run the daily operations of a business in one place." />
+<meta name="theme-color" content="#F3F1EB" />
 <script>document.documentElement.classList.add('js')</script>
 <link rel="icon" type="image/png" href="/logo.png" />
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 <style>
-  .svc-hero { position: relative; overflow: hidden; padding: clamp(36px,5vw,72px) 0 clamp(56px,7vw,96px); }
-  .svc-hero .orb { position: absolute; border-radius: 50%; background: var(--grad-dawn); filter: blur(20px); pointer-events: none; }
-  .svc-hero .orb.a { width: 520px; height: 520px; right: -150px; top: -120px; opacity: .5; }
-  .svc-hero .orb.b { width: 300px; height: 300px; left: -160px; bottom: -40px; opacity: .32; }
-  .svc-hero .wrap { position: relative; z-index: 1; }
-  .svc-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(30px,5vw,68px); align-items: center; }
-  .svc-hero .eyebrow { margin-bottom: 26px; }
-  .svc-hero h1 { font-family: var(--display); font-weight: 600; font-size: clamp(40px,5.6vw,76px); line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 24px; }
-  .svc-hero .lead { max-width: 32em; margin-bottom: 34px; }
-  .svc-actions { display: flex; gap: 15px; flex-wrap: wrap; }
-  .stage { position: relative; height: clamp(340px,38vw,440px); }
-  .stage-orb { position: absolute; inset: 8% 8% 8% 8%; border-radius: 46% 54% 52% 48% / 55% 48% 52% 45%; background: var(--grad-dawn); box-shadow: 0 40px 100px -40px rgba(240,67,42,.5); }
-  .stage-orb.inner { inset: 22% 20% 22% 20%; background: var(--grad-burn); opacity: .9; border-radius: 52% 48% 46% 54% / 48% 55% 45% 52%; }
-  .float-card { animation: bob 6s ease-in-out infinite; }
-  .float-card:nth-of-type(3) { animation-delay: -2s; } .float-card:nth-of-type(4) { animation-delay: -4s; }
-  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-  .fc-a { top: 4%; left: -4%; } .fc-b { top: 44%; right: -6%; } .fc-c { bottom: 4%; left: 12%; }
-
-  .stakes { padding: clamp(20px,3vw,32px) 0; }
-  .stakes-panel { position: relative; overflow: hidden; background: var(--grad-soft); border: 1px solid var(--line-2); border-radius: var(--r-lg); padding: clamp(36px,5vw,68px); }
-  .stakes-panel .sp-orb { position: absolute; right: -80px; bottom: -100px; width: 300px; height: 300px; border-radius: 50%; background: var(--grad-dawn); opacity: .5; filter: blur(14px); }
-  .stakes-panel .inner { position: relative; max-width: 30em; }
-  .stakes-panel .k { font-size: 14px; font-weight: 600; color: var(--red); letter-spacing: 0.02em; margin-bottom: 16px; }
-  .stakes-panel p { font-family: var(--display); font-weight: 500; font-size: clamp(24px,3.2vw,40px); line-height: 1.14; letter-spacing: -0.02em; }
-  .stakes-panel p .accent { color: var(--red); }
-
-  @media (max-width: 1000px) {
-    .svc-grid { grid-template-columns: 1fr; gap: 40px; }
-    .stage { max-width: 440px; }
-  }
-  @media (max-width: 760px) { .fc-a { left: 0; } .fc-b { right: 0; } }
+  .svc-hero { padding: clamp(48px,6vw,84px) 0 0; }
+  .svc-hero .label { display:block; margin-bottom: clamp(24px,3vw,36px); }
+  .svc-hero h1 { max-width: 15em; margin-bottom: clamp(24px,3vw,36px); }
+  .svc-hero .lead { max-width: 40em; padding-bottom: clamp(36px,4vw,52px); }
+  .contact-grid { display:grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(32px,5vw,72px); align-items:start; }
+  .cmeta { border-top:1px solid var(--line-strong); }
+  .cmeta .row { display:flex; flex-direction:column; gap:5px; padding:18px 0; border-bottom:1px solid var(--line); }
+  .cmeta .row .k { font-family:var(--display); font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-3); }
+  .cmeta .row .v { font-size:16px; }
+  .cmeta .row a.v:hover { color:var(--red); }
+  form.rs-form { border:1px solid var(--line-strong); border-radius:var(--radius); padding: clamp(24px,3vw,40px); background:var(--panel); }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-  <linearGradient id="burn" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#F9743B"/><stop offset="55%" stop-color="#F0432A"/><stop offset="100%" stop-color="#C31C36"/></linearGradient>
   <symbol id="rs-monogram" viewBox="0 0 40 40">
-    <rect width="40" height="40" rx="11" fill="url(#burn)"/>
-    <path d="M20 8.5 C24.5 12.5 26 18 26 22.4 L22.4 25.8 H17.6 L14 22.4 C14 18 15.5 12.5 20 8.5 Z" fill="#fff"/>
-    <circle cx="20" cy="18" r="2.5" fill="#F0432A"/>
-    <path d="M17.6 25.8 L15.4 31.5 L19.2 28.8 Z M22.4 25.8 L24.6 31.5 L20.8 28.8 Z" fill="#fff" opacity=".92"/>
+    <rect width="40" height="40" rx="2" fill="#17140F"/>
+    <path d="M20 9 C24 12.6 25.4 17.4 25.4 21.4 L22.2 24.4 H17.8 L14.6 21.4 C14.6 17.4 16 12.6 20 9 Z" fill="#C4241C"/>
+    <circle cx="20" cy="18" r="2.3" fill="#17140F"/>
+    <path d="M17.8 24.4 L15.9 29.6 L19.3 27.2 Z M22.2 24.4 L24.1 29.6 L20.7 27.2 Z" fill="#C4241C"/>
   </symbol>
 </defs></svg><header class="nav" id="nav">
   <div class="wrap nav-inner">
@@ -60,131 +41,77 @@
       <svg class="monogram"><use href="#rs-monogram"/></svg>
       <span class="word">Rocket Solutions</span>
     </a>
-    <nav class="nav-menu" id="navMenu"><a class="item" href="index.html">Home</a><a class="item" href="voice-ai.html">Voice AI</a><a class="item" href="websites.html">Websites</a><a class="item active" href="software.html">Software</a><a class="item" href="automation.html">Automation</a><a class="item" href="contact.html">Contact</a></nav>
+    <nav class="nav-menu" id="navMenu"><a class="item" href="index.html">Index</a><a class="item" href="voice-ai.html">Voice AI</a><a class="item" href="websites.html">Websites</a><a class="item active" href="software.html">Software</a><a class="item" href="automation.html">Automation</a><a class="item" href="contact.html">Contact</a></nav>
     <div class="nav-right">
-      <a class="btn btn-primary desk" href="contact.html">Start a project <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="nav-cta" href="contact.html">Get In Touch</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
       </button>
     </div>
   </div>
 </header>
 <main>
   <section class="svc-hero">
-    <div class="orb a"></div><div class="orb b"></div>
     <div class="wrap">
-      <div class="svc-grid">
-        <div>
-          <span class="eyebrow"><span class="dot"></span> Custom Software</span>
-          <h1>Run your whole<br>operation in<br>one place.</h1>
-          <p class="lead">Spreadsheets and a dozen disconnected apps are quietly costing you hours and mistakes. We build the dashboard, CRM, or tool your business actually needs, shaped around how you already work.</p>
-          <div class="svc-actions">
-            <a class="btn btn-primary" href="contact.html">Start a project <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-            <a class="btn btn-ghost" href="#how">How it works</a>
-          </div>
-        </div>
-        <div class="stage" aria-hidden="true">
-          <div class="stage-orb"></div><div class="stage-orb inner"></div>
-          <div class="float-card fc-a">
-      <div class="fc-ic" style="background:var(--blush)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg></div>
-      <div><div class="fc-k">Dashboard</div><div class="fc-v">All systems</div></div>
+      <span class="label"><span class="n">03</span> Custom Software</span>
+      <h1 class="h1">Software That Runs The Whole Operation In One Place.</h1>
+      <p class="lead">We build the dashboard, CRM, or internal tool a business actually needs, shaped around how it already works, so spreadsheets and disconnected apps stop costing time and mistakes.</p>
     </div>
-      <div class="float-card fc-b">
-      <div class="fc-ic" style="background:var(--blush)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div>
-      <div><div class="fc-k">New lead</div><div class="fc-v">Assigned</div></div>
-    </div>
-      <div class="float-card fc-c">
-      <div class="fc-ic" style="background:var(--blush)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14v4M12 9v9M17 5v13"/></svg></div>
-      <div><div class="fc-k">This week</div><div class="fc-v">On track</div></div>
-    </div>
-        </div>
-      </div>
-    </div>
+    <div class="wrap"><div class="masthead">
+      <div class="m-cell"><b>What It Is</b> Internal Tools</div>
+      <div class="m-cell"><b>Replaces</b> Spreadsheets & Apps</div>
+      <div class="m-cell"><b>Shaped To</b> Your Workflow</div>
+    </div></div>
   </section>
 
-  <section class="stakes">
+  <section class="section">
     <div class="wrap">
-      <div class="stakes-panel reveal">
-        <div class="sp-orb"></div>
-        <div class="inner">
-          <div class="k">The cost of scattered tools</div>
-          <p>Every hour spent copying data between apps and chasing spreadsheets is an hour <span class="accent">stolen from actually running your business.</span></p>
-        </div>
+      <div class="sec-head reveal"><span class="label"><span class="n">A</span> What It Does</span>
+        <h2 class="h2">One System. Total Control. No Busywork.</h2></div>
+      <div class="cols">
+        <div class="col reveal"><div class="c-n">A / One Place</div><h4>Everything Together</h4><p>Leads, jobs, scheduling, and reporting live in one system instead of five tabs.</p></div>
+        <div class="col reveal"><div class="c-n">B / Time</div><h4>Admin Gone</h4><p>The manual copying, chasing, and double entry simply disappears.</p></div>
+        <div class="col reveal"><div class="c-n">C / Clarity</div><h4>Numbers You Trust</h4><p>Clear reporting on what matters, updated in real time.</p></div>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow"><span class="dot"></span> What you get</span>
-        <h2 class="h2">One system. Total control. No busywork.</h2></div>
-      <div class="outcomes" style="margin-top:clamp(40px,5vw,64px)">
-        <div class="outcome-card reveal">
-          <div class="oc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 12l10 5 10-5M2 17l10 5 10-5"/></svg></div>
-          <h4>Everything in one place</h4><p>Leads, jobs, scheduling, and reporting live together instead of in five different tabs.</p>
-        </div>
-        <div class="outcome-card reveal d1">
-          <div class="oc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h4>Hours of admin gone</h4><p>The manual copying, chasing, and double entry simply disappears.</p>
-        </div>
-        <div class="outcome-card reveal d2">
-          <div class="oc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14v4M12 9v9M17 5v13"/></svg></div>
-          <h4>Decisions you can trust</h4><p>Clear reporting on the numbers that matter, updated in real time.</p>
-        </div>
+      <div class="sec-head reveal"><span class="label"><span class="n">B</span> What Is Included</span>
+        <h2 class="h2">Everything In The Build.</h2></div>
+      <div class="spec">
+        <div class="spec-item"><span class="s-n">01</span><h5>Admin Dashboards</h5><p>A command center for the business, built around its workflow.</p></div>
+        <div class="spec-item"><span class="s-n">02</span><h5>CRM</h5><p>Every lead and customer tracked from first contact to repeat work.</p></div>
+        <div class="spec-item"><span class="s-n">03</span><h5>Scheduling</h5><p>Jobs, staff, and calendars managed in one clean view.</p></div>
+        <div class="spec-item"><span class="s-n">04</span><h5>Reporting</h5><p>Live numbers on revenue, leads, and performance.</p></div>
+        <div class="spec-item"><span class="s-n">05</span><h5>Role Based Access</h5><p>The right people see the right things, and nothing they should not.</p></div>
+        <div class="spec-item"><span class="s-n">06</span><h5>Integrations</h5><p>Connected to the tools already in use.</p></div>
+        <div class="spec-item"><span class="s-n">07</span><h5>Built To Fit</h5><p>Shaped around the existing process, not forced into someone else's.</p></div>
+        <div class="spec-item"><span class="s-n">08</span><h5>Support & Upkeep</h5><p>Maintained and evolved as the business grows.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
+  <section class="section">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow"><span class="dot"></span> What is included</span>
-        <h2 class="h2">Everything, handled for you.</h2></div>
-      <div class="included" style="margin-top:clamp(36px,4vw,52px)">
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Admin dashboards</h5><p>A command center for your business, built around your workflow.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>CRM</h5><p>Track every lead and customer from first contact to repeat work.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Scheduling</h5><p>Jobs, staff, and calendars managed in one clean view.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Reporting</h5><p>Live numbers on revenue, leads, and performance, no spreadsheets required.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Role based access</h5><p>The right people see the right things, and nothing they should not.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Integrations</h5><p>Connected to the tools you already use so nothing falls through the cracks.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Built for your process</h5><p>Shaped around how you work, not forcing you into someone else's system.</p></div></div>
-        <div class="inc-item"><div class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C31C36" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
-          <div><h5>Support and upkeep</h5><p>We maintain and evolve it as your business grows.</p></div></div>
+      <div class="sec-head reveal"><span class="label"><span class="n">C</span> Method</span>
+        <h2 class="h2">How It Gets Built.</h2></div>
+      <div class="process">
+        <div class="process-row reveal"><span class="p-n">01</span><h4>Map The Workflow</h4><p>How the business runs today, and where it leaks time, is documented.</p></div>
+        <div class="process-row reveal"><span class="p-n">02</span><h4>Design And Build</h4><p>A tool is shaped around the process and shared as it takes form.</p></div>
+        <div class="process-row reveal"><span class="p-n">03</span><h4>Roll Out</h4><p>It launches, the team is trained, and it keeps improving over time.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="how" style="padding-top:0">
+  <section class="section band-dark">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="eyebrow"><span class="dot"></span> How it works</span>
-        <h2 class="h2">Live in weeks, not months.</h2></div>
-      <div class="stepline" style="margin-top:clamp(40px,5vw,64px)">
-        <div class="stepc reveal"><div class="sn">01</div>
-          <h4>We map your workflow</h4><p>We learn exactly how your business runs today, and where it leaks time.</p></div>
-        <div class="stepc reveal d1"><div class="sn">02</div>
-          <h4>We design and build</h4><p>A tool shaped around your process, shared with you as it takes form.</p></div>
-        <div class="stepc reveal d2"><div class="sn">03</div>
-          <h4>We roll it out</h4><p>We launch it, train your team, and keep improving it over time.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section tight">
-    <div class="wrap">
-      <div class="cta-band reveal">
-        <div class="cta-orb orb-a"></div><div class="cta-orb orb-b"></div>
-        <h2 class="h2">Replace the spreadsheets<br>with one system.</h2>
-        <p>Tell us how you run things today. We will show you the tool we would build to make it faster, clearer, and easier to grow.</p>
-        <div class="cta-actions">
-          <a class="btn btn-white" href="contact.html">Start a project <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a class="btn" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2)" href="index.html">Back to home</a>
-        </div>
+      <div class="reveal" style="max-width:22em">
+        <span class="label"><span class="n" style="color:var(--red)">*</span> Contact</span>
+        <h2 class="h2" style="margin:20px 0 20px">Tell Us What You Are Working On.</h2>
+        <p class="lead" style="margin-bottom:32px">Send a few details about the business and what needs building. You will hear back within one business day.</p>
+        <a class="btn btn-invert" href="contact.html">Get In Touch <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </section>
@@ -194,17 +121,17 @@
     <div class="foot-top">
       <div class="foot-brand">
         <a class="brand" href="index.html"><svg class="monogram"><use href="#rs-monogram"/></svg><span class="word">Rocket Solutions</span></a>
-        <p>A technology firm that builds the systems businesses run on. Georgia based, delivering nationwide.</p>
+        <p>A technology firm building the voice systems, websites, software, and automation that businesses run on.</p>
       </div>
-      <div class="foot-col"><div class="h">Capabilities</div>
+      <div class="foot-col"><div class="h">The Work</div>
         <a href="voice-ai.html">Voice AI</a><a href="websites.html">Websites</a><a href="software.html">Custom Software</a><a href="automation.html">AI Automation</a></div>
       <div class="foot-col"><div class="h">Firm</div>
-        <a href="index.html">Home</a><a href="contact.html">Contact</a><a href="mailto:hello@gorocketsolutions.com">Email us</a></div>
-      <div class="foot-col"><div class="h">Get started</div>
-        <a href="contact.html">Start a project</a><a href="contact.html">Book a call</a></div>
+        <a href="index.html">Index</a><a href="contact.html">Contact</a><a href="mailto:hello@gorocketsolutions.com">Email</a></div>
+      <div class="foot-col"><div class="h">Office</div>
+        <a href="#">Georgia, USA</a><a href="mailto:hello@gorocketsolutions.com">hello@gorocketsolutions.com</a></div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Rocket Solutions LLC. All rights reserved.</span>
+      <span>&copy; 2026 Rocket Solutions LLC</span>
       <span>Georgia, United States</span>
     </div>
   </div>
