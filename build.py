@@ -5,14 +5,7 @@
 ARROW = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg>'
 ARROW_S = '<svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 8h10M9 4l4 4-4 4"/></svg>'
 
-MONOGRAM_DEFS = '''<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-  <symbol id="rs-monogram" viewBox="0 0 40 40">
-    <rect width="40" height="40" rx="2" fill="#17140F"/>
-    <path d="M20 9 C24 12.6 25.4 17.4 25.4 21.4 L22.2 24.4 H17.8 L14.6 21.4 C14.6 17.4 16 12.6 20 9 Z" fill="#C4241C"/>
-    <circle cx="20" cy="18" r="2.3" fill="#17140F"/>
-    <path d="M17.8 24.4 L15.9 29.6 L19.3 27.2 Z M22.2 24.4 L24.1 29.6 L20.7 27.2 Z" fill="#C4241C"/>
-  </symbol>
-</defs></svg>'''
+MONOGRAM_DEFS = ''
 
 HEAD = '''<!DOCTYPE html>
 <html lang="en">
@@ -23,7 +16,7 @@ HEAD = '''<!DOCTYPE html>
 <meta name="description" content="{desc}" />
 <meta name="theme-color" content="#F3F1EB" />
 <script>document.documentElement.classList.add('js')</script>
-<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="icon" type="image/png" href="/rocket-solutions-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -53,8 +46,7 @@ def nav(active):
     return f'''<header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="index.html" aria-label="Rocket Solutions home">
-      <svg class="monogram"><use href="#rs-monogram"/></svg>
-      <span class="word">Rocket Solutions</span>
+      <img class="brand-logo" src="rocket-solutions-lockup.png" alt="Rocket Solutions" />
     </a>
     <nav class="nav-menu" id="navMenu">{links}</nav>
     <div class="nav-right">
@@ -70,7 +62,7 @@ FOOTER = '''<footer class="site">
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <a class="brand" href="index.html"><svg class="monogram"><use href="#rs-monogram"/></svg><span class="word">Rocket Solutions</span></a>
+        <a class="brand" href="index.html"><img class="brand-logo" src="rocket-solutions-lockup-invert.png" alt="Rocket Solutions" /></a>
         <p>A technology firm building the voice systems, websites, software, and automation that businesses run on.</p>
       </div>
       <div class="foot-col"><div class="h">The Work</div>
