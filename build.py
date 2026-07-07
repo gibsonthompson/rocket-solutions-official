@@ -20,7 +20,7 @@ HEAD = '''<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="/styles.css" />
 <style>
   .svc-hero {{ padding: clamp(48px,6vw,84px) 0 0; }}
   .svc-hero .label {{ display:block; margin-bottom: clamp(24px,3vw,36px); }}
@@ -40,17 +40,17 @@ HEAD = '''<!DOCTYPE html>
 '''
 
 def nav(active):
-    items = [("Voice AI","voice-ai.html"),("Websites","websites.html"),
-             ("Software","software.html"),("Automation","automation.html"),("Contact","contact.html")]
+    items = [("Voice AI","/voice-ai"),("Websites","/websites"),
+             ("Software","/software"),("Automation","/automation"),("Contact","/contact")]
     links = "".join(f'<a class="item{" active" if a==active else ""}" href="{h}">{a}</a>' for a,h in items)
     return f'''<header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="index.html" aria-label="Rocket Solutions home">
-      <img class="brand-logo" src="rocket-solutions-lockup.png" alt="Rocket Solutions" />
+    <a class="brand" href="/" aria-label="Rocket Solutions home">
+      <img class="brand-logo" src="/rocket-solutions-lockup.png" alt="Rocket Solutions" />
     </a>
     <nav class="nav-menu" id="navMenu">{links}</nav>
     <div class="nav-right">
-      <a class="nav-cta" href="contact.html">Get In Touch</a>
+      <a class="nav-cta" href="/contact">Get In Touch</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
       </button>
@@ -62,13 +62,13 @@ FOOTER = '''<footer class="site">
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <a class="brand" href="index.html"><img class="brand-logo" src="rocket-solutions-lockup-invert.png" alt="Rocket Solutions" /></a>
+        <a class="brand" href="/"><img class="brand-logo" src="/rocket-solutions-lockup-invert.png" alt="Rocket Solutions" /></a>
         <p>A technology firm building the voice systems, websites, software, and automation that businesses run on.</p>
       </div>
       <div class="foot-col"><div class="h">The Work</div>
-        <a href="voice-ai.html">Voice AI</a><a href="websites.html">Websites</a><a href="software.html">Custom Software</a><a href="automation.html">AI Automation</a></div>
+        <a href="/voice-ai">Voice AI</a><a href="/websites">Websites</a><a href="/software">Custom Software</a><a href="/automation">AI Automation</a></div>
       <div class="foot-col"><div class="h">Firm</div>
-        <a href="index.html">Home</a><a href="contact.html">Contact</a><a href="mailto:hello@gorocketsolutions.com">Email</a></div>
+        <a href="/">Home</a><a href="/contact">Contact</a><a href="mailto:hello@gorocketsolutions.com">Email</a></div>
       <div class="foot-col"><div class="h">Office</div>
         <a href="#">Atlanta, GA</a><a href="mailto:hello@gorocketsolutions.com">hello@gorocketsolutions.com</a></div>
     </div>
@@ -85,7 +85,7 @@ CONTACT_BAND = f'''  <section class="section band-dark">
         <span class="label"><span class="n" style="color:var(--red)">*</span> Contact</span>
         <h2 class="h2" style="margin:20px 0 20px">Tell Us What You Are Working On.</h2>
         <p class="lead" style="margin-bottom:32px">Send a few details about the business and what needs building. You will hear back within one business day.</p>
-        <a class="btn btn-invert" href="contact.html">Get In Touch {ARROW}</a>
+        <a class="btn btn-invert" href="/contact">Get In Touch {ARROW}</a>
       </div>
     </div>
   </section>'''
@@ -148,7 +148,7 @@ def service_page(s):
 
 {CONTACT_BAND}
 </main>
-''' + FOOTER + '\n<script src="app.js"></script>\n</body>\n</html>\n'
+''' + FOOTER + '\n<script src="/app.js"></script>\n</body>\n</html>\n'
 
 
 SERVICES = [
@@ -313,8 +313,8 @@ def contact_page():
 </main>
 ''' + FOOTER + '''
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="config.js"></script>
-<script src="app.js"></script>
+<script src="/config.js"></script>
+<script src="/app.js"></script>
 </body>
 </html>
 '''
