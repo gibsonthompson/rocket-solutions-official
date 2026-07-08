@@ -312,8 +312,6 @@ def contact_page():
   </section>
 </main>
 ''' + FOOTER + '''
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="/config.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>

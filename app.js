@@ -53,52 +53,48 @@
   setInterval(swap, 2400);
 })();
 
-// contact form (Supabase)
+// contact form -> /api/contact (texts a lead alert via Telnyx)
 (function () {
   const form = document.getElementById('contactForm');
   if (!form) return;
   const statusEl = document.getElementById('formStatus');
   const submitBtn = document.getElementById('submitBtn');
-  const cfg = window.ROCKET_CONFIG || {};
-  const configured = window.supabase && cfg.SUPABASE_URL && cfg.SUPABASE_ANON_KEY &&
-    !String(cfg.SUPABASE_URL).startsWith('YOUR_') && !String(cfg.SUPABASE_ANON_KEY).startsWith('YOUR_');
-  const sb = configured ? window.supabase.createClient(cfg.SUPABASE_URL, cfg.SUPABASE_ANON_KEY) : null;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     statusEl.className = 'form-status';
 
-    // honeypot: bots fill hidden fields, humans do not
     const hp = form.querySelector('[name=botcheck]');
-    if (hp && hp.checked) return;
-
-    if (!sb) {
-      statusEl.className = 'form-status err';
-      statusEl.textContent = 'Form not connected yet. Add your Supabase URL and anon key in config.js.';
-      return;
-    }
+    if (hp && hp.checked) return; // honeypot
 
     const fd = new FormData(form);
     const payload = {
       name: (fd.get('name') || '').toString().trim(),
-      company: (fd.get('company') || '').toString().trim() || null,
+      company: (fd.get('company') || '').toString().trim(),
       email: (fd.get('email') || '').toString().trim(),
-      phone: (fd.get('phone') || '').toString().trim() || null,
-      interest: (fd.get('interest') || '').toString().trim() || null,
+      phone: (fd.get('phone') || '').toString().trim(),
+      interest: (fd.get('interest') || '').toString().trim(),
       message: (fd.get('message') || '').toString().trim(),
-      page_url: location.href,
-      user_agent: navigator.userAgent
+      botcheck: hp && hp.checked ? 'on' : ''
     };
 
     submitBtn.disabled = true;
     const original = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     try {
-      const { error } = await sb.from('contact_submissions').insert(payload);
-      if (error) throw error;
-      form.reset();
-      statusEl.className = 'form-status ok';
-      statusEl.textContent = 'Message received. We will be in touch within one business day.';
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.ok) {
+        form.reset();
+        statusEl.className = 'form-status ok';
+        statusEl.textContent = 'Message received. We will be in touch within one business day.';
+      } else {
+        throw new Error(data.error || 'failed');
+      }
     } catch (err) {
       statusEl.className = 'form-status err';
       statusEl.textContent = 'Something went wrong. Email hello@gorocketsolutions.com and we will pick it up.';

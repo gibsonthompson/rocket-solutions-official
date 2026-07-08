@@ -1,57 +1,56 @@
 # Rocket Solutions
 
 Marketing website for **Rocket Solutions LLC**, a technology firm.
-Plain multi-page static site (HTML, CSS, vanilla JS). No build step required to run it.
-The contact form posts directly to **Supabase** from the browser using the anon key and Row Level Security.
+Multi-page static site (HTML, CSS, vanilla JS) with clean URLs on Vercel.
+The contact form texts you a lead alert via Telnyx. No database.
 
 ## Pages
-| File | Purpose |
-| --- | --- |
-| `index.html` | Home |
-| `voice-ai.html` | Voice AI service page |
-| `websites.html` | Websites service page |
-| `software.html` | Custom Software service page |
-| `automation.html` | AI Automation service page |
-| `contact.html` | Contact form (writes to Supabase) |
+| File | URL | Purpose |
+| --- | --- | --- |
+| `index.html` | `/` | Home |
+| `voice-ai.html` | `/voice-ai` | Voice AI |
+| `websites.html` | `/websites` | Websites |
+| `software.html` | `/software` | Custom Software |
+| `automation.html` | `/automation` | AI Automation |
+| `contact.html` | `/contact` | Contact form |
 
 ## Shared files
 - `styles.css` - the full design system (colors, type, components, responsive rules).
-- `app.js` - sticky nav, mobile menu, scroll reveal, rotating hero word, and the Supabase contact form handler.
-- `config.js` - your Supabase URL and anon key live here (one place). Loaded on the contact page.
-- `supabase/schema.sql` - the table + Row Level Security to paste into the Supabase SQL editor.
-- `build.py` - optional generator that rebuilds the service pages + contact page from copy defined at the bottom of the file. Not needed to run the site.
+- `app.js` - nav, mobile menu, scroll reveal, and the contact form handler (posts to `/api/contact`).
+- `api/contact.js` - Vercel serverless function that texts you the lead via Telnyx. The only server-side code.
+- `vercel.json` - enables clean URLs (`/voice-ai` instead of `/voice-ai.html`).
+- `build.py` - optional generator that rebuilds the service pages + contact page. Not needed to run the site.
+- Logos: `rocket-solutions-lockup.png` (nav), `rocket-solutions-lockup-invert.png` (footer), `rocket-solutions-icon.png` (favicon).
 
-## Contact form setup (Supabase)
-1. **Create the table.** In your Supabase project, open **SQL Editor** and run `supabase/schema.sql`. It creates `public.contact_submissions` with RLS so the public site can insert leads but only signed-in admins can read them.
-2. **Add your keys.** Open `config.js` and set:
-   - `SUPABASE_URL` - your project URL (Settings > API), e.g. `https://xxxx.supabase.co`
-   - `SUPABASE_ANON_KEY` - the public anon key (Settings > API)
+## Contact form: how it works
+1. The form posts JSON to `/api/contact`.
+2. That function sends you an SMS through Telnyx with the lead's name, email, phone, interest, and message.
+3. Nothing is stored. If you want a record, you have the text.
 
-   The anon key is designed to be public and embedded in client code; RLS is what keeps the data safe. Never put the `service_role` key here.
-3. That is it. Submissions land in the `contact_submissions` table. Read them from your admin dashboard, or in Supabase under **Table Editor**.
+There is no database and no dashboard. The one bit of server code exists only so your Telnyx API key never touches the browser.
 
-Until `config.js` is filled in, the form shows a "not connected" message instead of sending.
+### Environment variables (Vercel > Project > Settings > Environment Variables)
+| Variable | Value |
+| --- | --- |
+| `TELNYX_API_KEY` | Your Telnyx API key (starts with `KEY...`). |
+| `TELNYX_PHONE_NUMBER` | The number to send **from**, E.164 (e.g. `+14045551234`). Use an existing Telnyx number. |
+| `NOTIFICATION_PHONE` | The number to text (your cell), E.164 (e.g. `+14045550000`). |
+| `TELNYX_MESSAGING_PROFILE_ID` | Optional. The messaging profile your from-number is on. |
 
-### Getting notified on a new lead (optional)
-Use **Database > Webhooks** in Supabase: table `contact_submissions`, event `INSERT`, and point it at an Edge Function or your existing email/SMS notify endpoint. The row payload includes name, email, phone, and message, so you can reuse the same notification flow you run on your other projects.
-
-## Other setup
-- **Logo** - add your `logo.png` to the project root. The favicon points to `/logo.png`. The nav uses an inline SVG monogram as a placeholder mark.
-- **Contact email** - update `hello@gorocketsolutions.com` in the footer (every page) and in `contact.html` to your real address.
+Same key conventions as the other projects. If the from-number is on a messaging profile, set `TELNYX_MESSAGING_PROFILE_ID` too; otherwise it can be omitted. Until these are set, the form returns a generic error and no text is sent.
 
 ## Run locally
-Open `index.html` in a browser, or serve the folder:
+Clean URLs need a server that understands them, and the `/api` function needs the Vercel runtime, so use:
 ```bash
-python3 -m http.server 3000
-# or
-npx serve
+vercel dev
 ```
+This serves the pages at their clean URLs and runs `api/contact.js` locally (set the env vars in a `.env` file or your Vercel project first). `npx serve` will render the pages but will not run the API function.
 
 ## Deploy (Vercel)
-No framework and no build command. Push to a Git repo and import into Vercel, or run `vercel` in this folder. Vercel serves the static files as-is. Add `config.js` with your real values before (or right after) deploying.
+Push to a Git repo and import into Vercel, or run `vercel` in this folder. No build command. Vercel serves the static files, runs `api/contact.js` as a serverless function, and `vercel.json` turns on clean URLs. Set the four env vars above and the form is live.
 
 ## Editing the service pages
-The service pages and contact page are generated by `build.py` from the `SERVICES` data at the bottom of that file:
+The service pages and contact page are generated by `build.py`:
 ```bash
 python3 build.py
 ```
@@ -59,6 +58,5 @@ You can also edit the generated `.html` files directly; just do not re-run `buil
 
 ## Notes
 - No em-dashes are used anywhere (brand style).
-- Fonts (Clash Display + Satoshi) load from the Fontshare CDN in each page head. Nothing to install.
-- The small figures on the homepage cards (`+38%`, `0.9s`, etc.) are illustrative UI, not claims. Swap them for real numbers or remove them.
-- `styles.css` uses CSS custom properties at the top (`:root`) for the whole palette and type system. Change the brand there and it flows through every page.
+- Fonts (Space Grotesk + Inter) load from the Google Fonts CDN. Nothing to install.
+- `styles.css` uses CSS custom properties at the top (`:root`) for the whole palette and type system.
